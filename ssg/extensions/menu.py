@@ -1,8 +1,7 @@
-from ssg import hooks
-from ssg import parsers
+from ssg import hooks, parsers
 
-files = {}
+files = []
 
+@hooks.register("collect_files")
 def collect_files(source,site_parsers):
-hooks.register("collect_files")
-valid = lambda(p)
+valid = lambda p: not isinstance(p, parsers.ResoursceParser)
