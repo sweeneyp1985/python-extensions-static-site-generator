@@ -9,10 +9,10 @@ def load_module(directory,name):
 
 
 def load_directory(dictionary):
-    for path in directory.rglob(.*py):
+    for path in directory.rglob("*.py"):
         load_module(directory.as_posix(), path.stem)
 
 
 def load_bundled():
-    dictionary = Path(__file__).parent / "extensions"
-    load_dictionary(dictionary)
+    directory = Path(__file__).parent / "extensions"
+    load_directory(dictionary)
