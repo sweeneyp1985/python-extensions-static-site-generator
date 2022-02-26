@@ -14,8 +14,8 @@ def start_build():
 
 @hooks.register("written")
 def written():
-    global start_time
-    start_time = time.time()
+    global total_written
+    total_written = total_written + 1
 
 
 @hooks.register("stats")
